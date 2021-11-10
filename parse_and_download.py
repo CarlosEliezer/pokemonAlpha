@@ -6,9 +6,9 @@ import requests
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument('-p', '--pokemon-list', required = True,
-    help = 'pokemon_list.html')
+                help = 'pokemon_list.html')
 ap.add_argument('-s', '--sprites', required = True,
-    help = 'sprites')
+                help = 'sprites')
 args = vars(ap.parse_args())
 
 # construct the soup and initialize the list of pokemon
@@ -21,7 +21,7 @@ for link in soup.findAll('a'):
     # update the list of pokemon names
     names.append(link.text)
 
-#loop over the pokemon names
+# loop over the pokemon names
 for name in names:
     # initialize the parsed name as just the lowercase
     # version of the pokemon name
